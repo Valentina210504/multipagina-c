@@ -1,9 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="bienvenido a mi pagina">
 	este es el inicio
+	<p class="pretty-p font-myfont">hola</p>
+	<Icon name="mdi:delete-outline" size="56" class="text-green-600"/>
+	<Icon name="solar:accessibility-bold" size="56" class="text-amber-900"  />
+
 </Layout>
 
+<style>
+	.pretty-p{
+		@apply bg-red-500 p-6 text-white rounded h-52 text-center text-[50px];
+		clip-path: polygon(100% 0%, 0% 0% , 0.00% 73.65%, 3.33% 72.15%, 6.67% 69.97%, 10.00% 67.25%, 13.33% 64.15%, 16.67% 60.88%, 20.00% 57.64%, 23.33% 54.63%, 26.67% 52.05%, 30.00% 50.04%, 33.33% 48.75%, 36.67% 48.25%, 40.00% 48.57%, 43.33% 49.69%, 46.67% 51.55%, 50.00% 54.02%, 53.33% 56.95%, 56.67% 60.15%, 60.00% 63.44%, 63.33% 66.59%, 66.67% 69.41%, 70.00% 71.72%, 73.33% 73.38%, 76.67% 74.29%, 80.00% 74.38%, 83.33% 73.65%, 86.67% 72.15%, 90.00% 69.97%, 93.33% 67.25%, 96.67% 64.15%, 100.00% 60.88%);
+
+	}
+</style>
