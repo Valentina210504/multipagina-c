@@ -6,15 +6,77 @@ import { Icon } from "astro-icon/components";
 <Layout title="bienvenido a mi pagina">
 	este es el inicio
 	<p class="pretty-p font-myfont">hola</p>
-	<Icon name="mdi:delete-outline" size="56" class="text-green-600"/>
-	<Icon name="solar:accessibility-bold" size="56" class="text-amber-900"  />
+	<Icon name="mdi:delete-outline" size="56" class="text-green-600" />
+	<Icon name="solar:accessibility-bold" size="56" class="text-amber-900" />
+	<div id="btn">pinchame</div>
+
+
+	<ul data-tabs class="flex bg-blue-500">
+		<li><a data-tabby-default href="#harry">Harry Potter</a></li>
+		<li><a href="#hermione">Hermione</a></li>
+		<li><a href="#neville">Neville</a></li>
+	</ul>
+	
+	<div id="harry">harry</div>
+	<div id="hermione">hermione jajaja</div>
+	<div id="neville">neville jasjasj</div>
+
+	<div class="embla">
+		<div class="embla__container">
+		  <div class="embla__slide bg-green-600">Slide 1</div>
+		  <div class="embla__slide bg-red-800">Slide 2</div>
+		  <div class="embla__slide bg-amber-400">Slide 3</div>
+		</div>
+	  </div>
+	  
+
+	<div class="h-28"></div>
 
 </Layout>
 
 <style>
-	.pretty-p{
+	.pretty-p {
 		@apply bg-red-500 p-6 text-white rounded h-52 text-center text-[50px];
-		clip-path: polygon(100% 0%, 0% 0% , 0.00% 73.65%, 3.33% 72.15%, 6.67% 69.97%, 10.00% 67.25%, 13.33% 64.15%, 16.67% 60.88%, 20.00% 57.64%, 23.33% 54.63%, 26.67% 52.05%, 30.00% 50.04%, 33.33% 48.75%, 36.67% 48.25%, 40.00% 48.57%, 43.33% 49.69%, 46.67% 51.55%, 50.00% 54.02%, 53.33% 56.95%, 56.67% 60.15%, 60.00% 63.44%, 63.33% 66.59%, 66.67% 69.41%, 70.00% 71.72%, 73.33% 73.38%, 76.67% 74.29%, 80.00% 74.38%, 83.33% 73.65%, 86.67% 72.15%, 90.00% 69.97%, 93.33% 67.25%, 96.67% 64.15%, 100.00% 60.88%);
-
+		clip-path: polygon(100% 0%,0% 0%,0% 73.65%,3.33% 72.15%,6.67% 69.97%,10% 67.25%,13.33% 64.15%,16.67% 60.88%,
+			20% 57.64%,23.33% 54.63%,26.67% 52.05%,30% 50.04%,33.33% 48.75%,36.67% 48.25%,40% 48.57%,
+			43.33% 49.69%,46.67% 51.55%,50% 54.02%,53.33% 56.95%,56.67% 60.15%,60% 63.44%,63.33% 66.59%,
+			66.67% 69.41%,70% 71.72%,73.33% 73.38%,76.67% 74.29%,80% 74.38%,83.33% 73.65%,
+			86.67% 72.15%,90% 69.97%,93.33% 67.25%,96.67% 64.15%,100% 60.88%
+		);
 	}
+
+.embla {
+	@apply bg-slate-600 max-w-80;
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
 </style>
+
+<script>
+	import EmblaCarousel from 'embla-carousel'
+	import JSConfetti from "js-confetti";
+	import Tabby from "tabbyjs";
+
+	const jsConfetti = new JSConfetti();
+	const divBtn = document.getElementById("btn");
+
+	divBtn.addEventListener("click", function (event) {
+		console.log("me ha escuchado", event.target.id);
+		jsConfetti.addConfetti();
+	});
+	console.log(divBtn);
+
+	const tabs = new Tabby('[data-tabs]');
+
+	const emblaNode = document.querySelector('.embla')
+	const options = { loop: false }
+	EmblaCarousel(emblaNode, options)
+
+</script>

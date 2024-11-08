@@ -21,8 +21,13 @@ const { title='te olvidaste del titulo', msg ='hola mundo cruel'} = Astro.props;
 			<li>
 				<a class="hover:bg-white/25 px-2 block" href="/quienes-somos">quienes somos</a>
 			</li>
-			<li>
+			<li class="group">
 				<a class="hover:bg-white/25 px-2 block" href="/organigrama">organigrama</a>
+				<ul class="absolute bg-slate-300 hidden group-hover:block w-full left-0">
+					<li>aajsj</li>
+					<li>sdaas</li>
+					<li>scadsd</li>
+				</ul>
 			</li>
 			<li>
 				<a class="hover:bg-white/25 px-2 block" href="/contacto">contacto</a>
@@ -44,4 +49,3 @@ const { title='te olvidaste del titulo', msg ='hola mundo cruel'} = Astro.props;
   font-display: swap;
 }
 </style>
-
